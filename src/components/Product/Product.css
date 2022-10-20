@@ -1,0 +1,51 @@
+#ProductDisplay{
+    width: 100%;
+    height: 25%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 80px 1fr;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.label{
+    color: white;
+    font-size: 2rem;
+}
+
+#ProductDisplay{
+grid-column: 1/2;
+}
+
+#ProductQuantityLabel{
+    grid-column: 2/3;
+}
+
+#ProductQuantity{
+    grid-column: 3/4;
+}
+
+#ProductOptions{
+    grid-column: 4/5;
+}
+
+.button {
+    font: inherit;
+    border: 1px solid #000c7c;
+    background: #000c7c;
+    color: white;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    font-size: 1.15rem;
+    border-radius: 10px;
+  }
+  
+  .button:hover,
+  .button:active {
+    background: #717de7;
+    border-color: #717de7;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
