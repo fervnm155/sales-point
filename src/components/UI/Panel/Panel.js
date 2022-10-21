@@ -40,8 +40,8 @@ const Panel = (props) => {
       <input id='visor' readOnly value={quantity}></input>
       <div>
         <button className={'button'} value={'1'} onClick={modQuantity}>1</button>
-        <button className={'button'}value={'2'} onClick={modQuantity}>2</button>
-        <button className={'button'}value={'3'} onClick={modQuantity}>3</button>
+        <button className={'button'} value={'2'} onClick={modQuantity}>2</button>
+        <button className={'button'} value={'3'} onClick={modQuantity}>3</button>
       </div>
       <div>
         <button className={'button'} value={'4'} onClick={modQuantity}>4</button>

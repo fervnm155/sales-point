@@ -4,11 +4,9 @@ import Panel from "../UI/Panel/Panel";
 import "./Product.css";
 
 const Product = (props) => {
-  const [enteredQuantity, setEnteredQuantity] = useState("0");
   const [showPanel, setShowPanel] = useState(false);
 
   const panelHandler = () => {
-    // setTimeout(setShowPanel(true),20000);
     setShowPanel(true);
   };
 
@@ -17,7 +15,8 @@ const Product = (props) => {
   };
 
   const modifyQuantity = (quantity) => {
-    setEnteredQuantity(quantity);
+    const newProduct = { name: props.product.name, quantity: quantity };
+    props.onUpdateProduct(newProduct);
   };
 
   return (
@@ -29,7 +28,7 @@ const Product = (props) => {
         Cantidad
       </label>
       <label id="ProductQuantity" className={"label"}>
-        {enteredQuantity}
+        {props.product.quantity}
       </label>
       <div id="ProductOptions">
         {!showPanel && (
@@ -37,7 +36,6 @@ const Product = (props) => {
             Edit
           </button>
         )}
-        {/* <button onClick={panelHandler}>Edit</button> */}
         {showPanel && (
           <Panel onHidePanel={hidePanel} onModifyQuantity={modifyQuantity} />
         )}
