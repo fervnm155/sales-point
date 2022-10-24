@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import Card from "../UI/Card/Card";
 
@@ -8,6 +8,8 @@ const Menu = (props) => {
   const [taco, setTaco] = useState({ name: "Tacos", quantity: 0 });
   const [bebida, setBebida] = useState({ name: "Bebidas", quantity: 0 });
   const [postre, setPostre] = useState({ name: "Postres", quantity: 0 });
+
+  // const [products,setProducts]=useState([]);
 
   const logProduct = {
     Tacos: (product) => setTaco(product),
@@ -52,6 +54,28 @@ const Menu = (props) => {
     setPostre({ name: postre.name, quantity: 0 });
   };
 
+  useEffect(() => {
+    const tac = JSON.parse(localStorage.getItem("tacos"));
+    const beb = JSON.parse(localStorage.getItem("bebidas"));
+    const pos = JSON.parse(localStorage.getItem("postres"));
+    console.log('cantidad tacos',tac.quantity);
+    if (tac.quantity != 0) {
+      setTaco({ name: taco.name, quantity: tac.quantity });
+    }
+    if (beb.quantity != 0) {
+      setBebida({ name: bebida.name, quantity: beb.quantity });
+    }
+    if (pos.quantity != 0) {
+      setPostre({ name: postre.name, quantity: pos.quantity });
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tacos", JSON.stringify(taco));
+    localStorage.setItem("bebidas", JSON.stringify(bebida));
+    localStorage.setItem("postres", JSON.stringify(postre));
+  }, [taco, bebida, postre]);
+
   return (
     <div id="Menu">
       <ul id="MenuProducts">
@@ -65,7 +89,6 @@ const Menu = (props) => {
           <Product product={postre} onUpdateProduct={UpdateProduct} />
         </li>
       </ul>
-      {/* {console.log({ taco }, { bebida }, { postre })} */}
       <div id="MenuOptions">
         <button onClick={OrderCancel} className="button">
           Cancel
