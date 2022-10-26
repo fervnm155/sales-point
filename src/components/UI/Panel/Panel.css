@@ -16,7 +16,7 @@
   font-size: 1.15rem;
 }
 
-.button {
+.panelButton {
     font: inherit;
     border: 1px solid #000c7c;
     background: #000c7c;
@@ -27,12 +27,12 @@
     border-radius: 10px;
   }
   
-  .button:hover,
-  .button:active {
+  .panelButton:hover,
+  .panelButton:active {
     background: #717de7;
     border-color: #717de7;
   }
   
-  .button:focus {
+  .panelButton:focus {
     outline: none;
   }

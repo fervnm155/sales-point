@@ -5,29 +5,36 @@ const ConfirmationCard = (props) => {
   const bebidaPrice = 17;
   const postrePrice = 30;
 
+  let subTac = 0,
+    subBeb = 0,
+    subPos = 0;
+  let total = 0;
+
   const getSubTotal = (product) => {
     switch (product.name) {
       case "Tacos":
-        return +product.quantity * tacoPrice;
+        subTac = +product.quantity * tacoPrice;
+        return subTac;
       case "Bebidas":
-        return +product.quantity * bebidaPrice;
+        subBeb = +product.quantity * bebidaPrice;
+        return subBeb;
       case "Postres":
-        return +product.quantity * postrePrice;
+        subPos = +product.quantity * postrePrice;
+        return subPos;
       default:
         break;
     }
   };
 
   const getTotal = (productList) => {
-    let total = 0;
     productList.forEach((element) => {
       total = total + +getSubTotal(element);
     });
     return +total;
   };
 
-  const confirmation=(event)=>{
-    props.onConfirmedOrder(event.target.value);
+  const confirmation = (event) => {
+    props.onConfirmedOrder(event.target.value, [subTac, subBeb, subPos, total]);
   };
 
   return (
@@ -49,8 +56,12 @@ const ConfirmationCard = (props) => {
       </div>
       <div className="total">Total: ${getTotal(props.productList)}</div>
       <div className="confirmationOtions">
-        <button onClick={confirmation} value={false} className="cButtonCancel">Cancelar</button>
-        <button onClick={confirmation} value={true} className="cButtonAcept" >Aceptar</button>
+        <button onClick={confirmation} value={false} className="cButtonCancel">
+          Cancelar
+        </button>
+        <button onClick={confirmation} value={true} className="cButtonAcept">
+          Aceptar
+        </button>
       </div>
     </div>
   );

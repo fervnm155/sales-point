@@ -1,0 +1,161 @@
+.payment {
+    width: 100%;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 100px;
+}
+
+.paymentData {
+    width: 100%;
+    grid-column: 2/3;
+    background: #5F9DF7;
+    border: 2px solid #1746A2;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr;
+    justify-items: center;
+}
+
+.paymentTitle {
+    color: white;
+    text-align: center;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+}
+
+.paymentList {
+    width: 100%;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row: 2/3;
+}
+
+.pProducts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pProductName {
+    grid-column: 1/2;
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pProductQuantity {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pProductSubtotal {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pText {
+    font-size: 20px;
+    color: white;
+}
+
+.pSubTitles {
+    font-weight: bold;
+}
+
+
+.pResults {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    text-align: right;
+    padding: 5px;
+}
+
+.paymentColumn {
+    grid-column: 3/4;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.paymentMethods {
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pPanel {
+    grid-row: 2/3;
+    height: 70%;
+}
+
+.paymentOptions {
+    grid-row: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.pRightButton {
+    font: inherit;
+    color: white;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.pLeftButton {
+    font: inherit;
+    background: red;
+    color: white;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.pButtonAcept {
+    background: green;
+}
+
+.pButtonAcept:hover,
+.pButtonAcept:active {
+  background: rgb(0, 204, 0);
+}
+
+.pButtonCancel {
+    background: rgb(204, 0, 0);
+}
+
+.pButtonCancel:hover,
+.pButtonCancel:active {
+  background: red;
+}
+
+.pButtons {
+    background: #1746A2;
+    border: 1px solid black;
+}
+
+.pButtons:hover,
+.pButtons:active {
+    background: #717de7;
+    border-color: #717de7;
+}
+
+.pButtons:focus {
+    outline: none;
+}

@@ -58,15 +58,16 @@ const Menu = (props) => {
     const tac = JSON.parse(localStorage.getItem("tacos"));
     const beb = JSON.parse(localStorage.getItem("bebidas"));
     const pos = JSON.parse(localStorage.getItem("postres"));
-    console.log('cantidad tacos',tac.quantity);
-    if (tac.quantity != 0) {
-      setTaco({ name: taco.name, quantity: tac.quantity });
-    }
-    if (beb.quantity != 0) {
-      setBebida({ name: bebida.name, quantity: beb.quantity });
-    }
-    if (pos.quantity != 0) {
-      setPostre({ name: postre.name, quantity: pos.quantity });
+    if (tac != null && beb != null && pos != null) {
+      if (tac.quantity != 0) {
+        setTaco({ name: taco.name, quantity: tac.quantity });
+      }
+      if (beb.quantity != 0) {
+        setBebida({ name: bebida.name, quantity: beb.quantity });
+      }
+      if (pos.quantity != 0) {
+        setPostre({ name: postre.name, quantity: pos.quantity });
+      }
     }
   }, []);
 
